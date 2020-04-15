@@ -69,6 +69,10 @@ sudo pip3 install docker-compose
 
 I used the following sources to setup my raspberry pi server.
 
-https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08
+[Install Docker and Docker Compose on Raspberry pi 4(Raspbian Buster)](https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08)
 
 https://www.youtube.com/watch?v=a6mjt8tWUws
+
+### articles:
+
+[Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
