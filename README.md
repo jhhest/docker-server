@@ -2,9 +2,10 @@
 
 ![raspberry pi](IMG/a999bb5f-Raspberry+Pi+4.webp)
 
-This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
+> This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
+> I believe docker is a usefull skill and tool in any development environment. I document my steps to learn how to work with docker, docker-compose and ubuntu.
 
-I document my steps to learn how to work with docker, docker-compose and ubuntu.
+> In this document i will show how to setup ubuntu on a raspberry pi, install docker and docker compose in an easy way. I will use docker-compose to setup containers. I will attach an external usb disk for extra space.
 
 ## installation
 
@@ -64,16 +65,22 @@ sudo apt-get remove python-configparser
 sudo pip3 install docker-compose
 ```
 
+## Docker compose.
+
 ### todo
 
 ## Sources
 
 I used the following sources to setup my raspberry pi server.
 
-[Install Docker and Docker Compose on Raspberry pi 4(Raspbian Buster)](https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08)
+### Video tutorials
 
-https://www.youtube.com/watch?v=a6mjt8tWUws
+[Andreas Spiess: #295 Raspberry Pi Server based on Docker, with VPN, Dropbox backup, Influx, Grafana, etc.](https://www.youtube.com/watch?v=a6mjt8tWUws)
+[ETA PRIME: Install Ubuntu 19.10 On The Raspberry Pi 4 Full Ubuntu Desktop](https://www.youtube.com/watch?v=HMo9C7LCzE0&t=35s)
+
+[Install Docker and Docker Compose on Raspberry pi 4(Raspbian Buster)](https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08)
 
 ### articles
 
 [Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
+[Traefik Tutorial: Traefik Reverse Proxy with LetsEncrypt for Docker Media Server](https://www.smarthomebeginner.com/traefik-reverse-proxy-tutorial-for-docker/)
