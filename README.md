@@ -1,7 +1,7 @@
 # Raspberry Pi Docker-server
 
-This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
 ![raspberry pi](IMG/a999bb5f-Raspberry+Pi+4.webp)
+This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
 
 I document my steps to learn how to work with docker, docker-compose and ubuntu.
 
@@ -73,6 +73,6 @@ I used the following sources to setup my raspberry pi server.
 
 https://www.youtube.com/watch?v=a6mjt8tWUws
 
-### articles:
+### articles
 
 [Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
