@@ -1,6 +1,7 @@
 # Raspberry Pi Docker-server
 
 ![raspberry pi](IMG/a999bb5f-Raspberry+Pi+4.webp)
+
 This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
 
 I document my steps to learn how to work with docker, docker-compose and ubuntu.
