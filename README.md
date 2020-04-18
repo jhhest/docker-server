@@ -2,10 +2,14 @@
 
 ![raspberry pi](IMG/a999bb5f-Raspberry+Pi+4.webp)
 
-> This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
-> I believe docker is a usefull skill and tool in any development environment. I document my steps to learn how to work with docker, docker-compose and ubuntu.
+## intro
 
-> In this document i will show how to setup ubuntu on a raspberry pi, install docker and docker compose in an easy way. I will use docker-compose to setup containers. I will attach an external usb disk for extra space.
+> This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
+> If you like to know more about docker, what it is and how it works i recommend to watch this video: [Andreas Spiess: #295 Raspberry Pi Server based on Docker, with VPN, Dropbox backup, Influx, Grafana, etc.](https://www.youtube.com/watch?v=a6mjt8tWUws). It explaines in a simple way what docker is, how it works and how you can use it. It is only 18 minutes and i think it is one of best video's that explaines in a short way what docker is, how it works and how you can use it.
+
+## Why making a server with docker, a raspberry pi and ubuntu?
+
+> I believe docker is a usefull skill and tool in any development environment. I document my steps to learn how to work with docker, docker-compose and ubuntu.
 
 ## installation
 
@@ -23,7 +27,11 @@ arm_freq=2000
 gpu_freq=650
 ```
 
-4. Insert your sd-card and boot from it. Find the ip of your raspberry pi. You can find it in your router admin page or use an app like fing on your mobile phone(Your raspberry pi and phone need to be in the same network)
+4. Insert your sd-card and boot from it. Find the ip of your raspberry pi. You can find it in your router admin page or use an app like fing on your mobile phone(Your raspberry pi and phone need to be in the same network) You can acces your server now with ssh through an terminal.
+
+```bash
+ssh ubuntu@192.1.1.11
+```
 
 ### Install docker and composer.
 
@@ -66,6 +74,8 @@ sudo pip3 install docker-compose
 ```
 
 ## Docker compose.
+
+> There are several way's of setting up containers with docker. Docker compose is one way of setting up containers.
 
 ### todo
 
