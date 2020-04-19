@@ -102,11 +102,11 @@ USERDIR="/home/xxxx"
 MYSQL_ROOT_PASSWORD="superSecretPassword"
 ```
 
-Ofcourse you have to adjust these values (especially values like `xxxx`) to your own situation and hardware. `PUID` and `PGID` can be retrieved by executing the command `id` in your terminal. 
+Ofcourse you have to adjust these values (especially values like `xxxx`) to your own situation and hardware. `PUID` and `PGID` can be retrieved by executing the command `id` in your terminal.
 
 Find out your timezone at the [Timezone Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-Find out your `USERDIR` by executing `cd ~ ; pwd` in your terminal. 
+Find out your `USERDIR` by executing `cd ~ ; pwd` in your terminal.
 
 ## Docker compose
 
@@ -120,12 +120,14 @@ I used the following sources to setup my raspberry pi server.
 
 ### Video tutorials
 
-[Andreas Spiess: #295 Raspberry Pi Server based on Docker, with VPN, Dropbox backup, Influx, Grafana, etc.](https://www.youtube.com/watch?v=a6mjt8tWUws)
-[ETA PRIME: Install Ubuntu 19.10 On The Raspberry Pi 4 Full Ubuntu Desktop](https://www.youtube.com/watch?v=HMo9C7LCzE0&t=35s)
-
-[Install Docker and Docker Compose on Raspberry pi 4(Raspbian Buster)](https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08)
+- [Andreas Spiess: #295 Raspberry Pi Server based on Docker, with VPN, Dropbox backup, Influx, Grafana, etc.](https://www.youtube.com/watch?v=a6mjt8tWUws)
+- [ETA PRIME: Install Ubuntu 19.10 On The Raspberry Pi 4 Full Ubuntu Desktop](https://www.youtube.com/watch?v=HMo9C7LCzE0&t=35s)
+- [Install Docker and Docker Compose on Raspberry pi 4(Raspbian Buster)](https://medium.com/@techiebouncer/install-docker-and-docker-compose-on-raspberry-pi-4-raspbian-buster-c5b78b9a0d08)
 
 ### articles
 
-[Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
-[Traefik Tutorial: Traefik Reverse Proxy with LetsEncrypt for Docker Media Server](https://www.smarthomebeginner.com/traefik-reverse-proxy-tutorial-for-docker/)
+- [Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
+- [Traefik Tutorial: Traefik Reverse Proxy with LetsEncrypt for Docker Media Server](https://www.smarthomebeginner.com/traefik-reverse-proxy-tutorial-for-docker/)
+- [Linux file permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+- [An Introduction to Storage Terminology and Concepts in Linux](https://www.digitalocean.com/community/tutorials/an-introduction-to-storage-terminology-and-concepts-in-linux)
+- [How To Partition and Format Storage Devices in Linux](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux)
