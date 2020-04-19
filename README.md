@@ -155,10 +155,10 @@ Steps
 curl -sSL https://get.docker.com | sh
 ```
 
-2. Add permission to Pi User to run Docker Commands
+2. Add permission to ubuntu User to run Docker Commands
 
 ```bash
-sudo usermod -aG docker pi
+sudo usermod -aG docker ubuntu
 ```
 
 Reboot here or run the next commands with a sudo
@@ -241,3 +241,4 @@ I used the following sources to setup my raspberry pi server.
 - [Linux file permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 - [An Introduction to Storage Terminology and Concepts in Linux](https://www.digitalocean.com/community/tutorials/an-introduction-to-storage-terminology-and-concepts-in-linux)
 - [How To Partition and Format Storage Devices in Linux](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux)
+- [Partitioning, Formatting, and Mounting a Hard Drive in Linux Ubuntu 18.04 (2020)](https://medium.com/@sh.tsang/partitioning-formatting-and-mounting-a-hard-drive-in-linux-ubuntu-18-04-324b7634d1e0)
