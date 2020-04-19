@@ -241,4 +241,5 @@ I used the following sources to setup my raspberry pi server.
 - [Linux file permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 - [An Introduction to Storage Terminology and Concepts in Linux](https://www.digitalocean.com/community/tutorials/an-introduction-to-storage-terminology-and-concepts-in-linux)
 - [How To Partition and Format Storage Devices in Linux](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux)
+- [Ubuntu documentation: Installing a new harddrive](https://help.ubuntu.com/community/InstallingANewHardDrive)
 - [Partitioning, Formatting, and Mounting a Hard Drive in Linux Ubuntu 18.04 (2020)](https://medium.com/@sh.tsang/partitioning-formatting-and-mounting-a-hard-drive-in-linux-ubuntu-18-04-324b7634d1e0)
