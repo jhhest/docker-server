@@ -44,6 +44,8 @@ the necessary steps are described in the following article.
 
 ### install and configure samba file sharing.
 
+> I use samba for easy file sharing across my network. I used the following ubuntu tutorial to install samba [Install and Configure Samba](https://ubuntu.com/tutorials/install-and-configure-samba#1-overview)
+
 To install Samba, we run:
 
 ```bash
