@@ -2,7 +2,7 @@
 
 ![raspberry pi](IMG/a999bb5f-Raspberry+Pi+4.webp)
 
-## intro
+## Intro
 
 > This document is my personal log of making a home server with a raspberry pi 4 (4GB model).
 > If you like to know more about docker, what it is and how it works i recommend to watch this video: [Andreas Spiess: #295 Raspberry Pi Server based on Docker, with VPN, Dropbox backup, Influx, Grafana, etc.](https://www.youtube.com/watch?v=a6mjt8tWUws). It explaines in a simple way what docker is, how it works and how you can use it. It is only 18 minutes and i think it is one of best video's that explaines in a short way what docker is, how it works and how you can use it.
@@ -27,7 +27,9 @@ arm_freq=2000
 gpu_freq=650
 ```
 
-4. Insert your sd-card and boot from it. Find the ip of your raspberry pi. You can find it in your router admin page or use an app like fing on your mobile phone(Your raspberry pi and phone need to be in the same network) You can acces your server now with ssh through an terminal.
+4. Insert your sd-card and boot from it. Find the ip of your raspberry pi. You can find it in your router admin page or use an app like fing on your mobile phone(Your raspberry pi and phone need to be in the same network) You can acces your server now with ssh through an terminal. (The initial password is ubuntu and during the first time you login you will be asked to change it.)
+
+You can use the following command to login into your raspberry pi through ssh with the following command (Replace the ip adress with the ip adress of your raspberry pi.)
 
 ```bash
 ssh ubuntu@192.1.1.11
@@ -73,7 +75,40 @@ sudo apt-get remove python-configparser
 sudo pip3 install docker-compose
 ```
 
-## Docker compose.
+6. Add Linux User to Docker Group
+   Running and managing docker containers requires sudo privileges. So this means you will have to type sudo for every command or switch to the root user account. But you can get around this by adding the current user to the docker group using the following command:
+
+```bash
+sudo usermod -aG docker ${USER}
+```
+
+While this can be a minor security risk, the chances are very less and this is not an enterprise level setup but a home setup. You can do this for convenience.
+
+### environment variables
+
+Each container has it own environmental variables such as timezone, user id, user group, etc. that docker containers should use. In this case a lot of these variables will be the same for these containers. Create / edit the environmental variables file using the following command:
+
+```bash
+sudo nano /etc/environment
+```
+
+Add the following as separate lines at the end of the file:
+
+```bash
+PUID=xxxx
+PGID=xxx
+TZ="Europe/Amsterdam"
+USERDIR="/home/xxxx"
+MYSQL_ROOT_PASSWORD="superSecretPassword"
+```
+
+Ofcourse you have to adjust these values (especially values like `xxxx`) to your own situation and hardware. `PUID` and `PGID` can be retrieved by executing the command `id` in your terminal. 
+
+Find out your timezone at the [Timezone Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
+Find out your `USERDIR` by executing `cd ~ ; pwd` in your terminal. 
+
+## Docker compose
 
 > There are several way's of setting up containers with docker. Docker compose is one way of setting up containers.
 
