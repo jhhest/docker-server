@@ -35,6 +35,114 @@ You can use the following command to login into your raspberry pi through ssh wi
 ssh ubuntu@192.1.1.11
 ```
 
+### Add an external USB harddisk.
+
+To add an external usb drive u need to partition it and mount it.
+the necessary steps are described in the following article.
+
+- [How To Partition and Format Storage Devices in Linux](https://github.com/jhhest/docker-server/blob/master/How%20To%20Partition%20and%20Format%20Storage%20Devices%20in%20Linux.md)
+
+### install and configure samba file sharing.
+
+To install Samba, we run:
+
+```bash
+sudo apt update
+sudo apt install samba
+```
+
+We can check if the installation was successful by running:
+
+```bash
+whereis samba
+```
+
+The following should be its output:
+
+```bash
+samba: /usr/sbin/samba /usr/lib/samba /etc/samba /usr/share/samba /usr/share/man/man7/samba.7.gz /usr/share/man/man8/samba.8.gz
+```
+
+#### Setting up Samba
+
+Now that Samba is installed, we need to create a directory for it to share:
+
+```bash
+mkdir /home/<username>/sambashare/
+```
+
+The command above creates a new folder `sambashare` in our home directory which we will share later.
+
+The configuration file for Samba is located at `/etc/samba/smb.conf`. To add the new directory as a share, we edit the file by running:
+
+```bash
+sudo nano /etc/samba/smb.conf
+```
+
+At the bottom of the file, add the following lines:
+
+```text
+    [sambashare]
+        comment = Samba on Ubuntu
+        path = /home/username/sambashare
+        read only = no
+        browsable = yes
+```
+
+Then press `Ctrl-O` to save and `Ctrl-X` to exit from the _nano_ text editor.
+
+##### What we've just added
+
+- comment: A brief description of the share.
+
+- path: The directory of our share.
+- read only: Permission to modify the contents of the share folder is only granted when the value of this directive is `no`.
+- browsable: When set to `yes`, file managers such as Ubuntu's default file manager will list this share under "Network" (it could also appear as browseable).
+
+Now that we have our new share configured, save it and restart Samba for it to take effect:
+
+```bash
+sudo service smbd restart
+```
+
+Update the firewall rules to allow Samba traffic:
+
+```bash
+sudo ufw allow samba
+```
+
+#### Setting up User Accounts and Connecting to Share
+
+Since Samba doesn't use the system account password, we need to set up a Samba password for our user account:
+
+```bash
+sudo smbpasswd -a username
+```
+
+> ⓘ Username used must belong to a system account, else it won't save.
+
+### Connecting to Share
+
+On Ubuntu: Open up the default file manager and click _Connect to Server_ then enter:
+![ubuntuctn](https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/7/7e0831db9f6dc65fa530832163f6e865d746ea32.png)
+
+On macOS: In the Finder menu, click _Go \> Connect to Server_ then enter:
+![macosctn](https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/0/027b1f7d34951cada9c002c3250c1aff148ccc7b.png)
+
+On Windows, open up File Manager and edit the file path to:
+
+```address
+\\ip-address\sambashare
+```
+
+Note: `ip-address` is the Samba server IP address and `sambashare` is the name of the share.
+
+You'll be prompted for your credentials. Enter them to connect! ![Samba](https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/5/56bda4786ea6393efec317d90cf413796503e1d7.png)
+
+### If you'd like to take your configuration further...
+
+- [Samba Server Guide](https://help.ubuntu.com/community/Samba/SambaServerGuide)
+
 ### Install docker and composer.
 
 Steps
