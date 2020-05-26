@@ -139,7 +139,8 @@ On Windows, open up File Manager and edit the file path to:
 
 Note: `ip-address` is the Samba server IP address and `sambashare` is the name of the share.
 
-You'll be prompted for your credentials. Enter them to connect! ![Samba](https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/5/56bda4786ea6393efec317d90cf413796503e1d7.png)
+You'll be prompted for your credentials. Enter them to connect! 
+![Samba](https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/5/56bda4786ea6393efec317d90cf413796503e1d7.png)
 
 ### If you'd like to take your configuration further...
 
@@ -223,6 +224,8 @@ Find out your `USERDIR` by executing `cd ~ ; pwd` in your terminal.
 > There are several way's of setting up containers with docker. Docker compose is one way of setting up containers.
 
 ### todo
+- https://www.raspberrypi.org/forums/viewtopic.php?t=237735
+
 
 ## Sources
 
@@ -237,9 +240,21 @@ I used the following sources to setup my raspberry pi server.
 ### articles
 
 - [Ultimate Smart Home Media Server with Docker and Ubuntu 18.04 – Basic](https://www.smarthomebeginner.com/docker-home-media-server-2018-basic/#What_is_a_Home_Media_Server)
+
 - [Traefik Tutorial: Traefik Reverse Proxy with LetsEncrypt for Docker Media Server](https://www.smarthomebeginner.com/traefik-reverse-proxy-tutorial-for-docker/)
+
+- [Official ubuntu server guide](https://help.ubuntu.com/lts/serverguide/index.html)
+
+- [Ubuntu documentation: User Management](https://help.ubuntu.com/lts/serverguide/user-management.html)
+
 - [Linux file permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+
 - [An Introduction to Storage Terminology and Concepts in Linux](https://www.digitalocean.com/community/tutorials/an-introduction-to-storage-terminology-and-concepts-in-linux)
+
 - [How To Partition and Format Storage Devices in Linux](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux)
+
 - [Ubuntu documentation: Installing a new harddrive](https://help.ubuntu.com/community/InstallingANewHardDrive)
+
 - [Partitioning, Formatting, and Mounting a Hard Drive in Linux Ubuntu 18.04 (2020)](https://medium.com/@sh.tsang/partitioning-formatting-and-mounting-a-hard-drive-in-linux-ubuntu-18-04-324b7634d1e0)
+
+- [Compatible USB // Raspberry Pi 4 USB Boot Config Guide for SSD / Flash Drives](https://jamesachambers.com/raspberry-pi-4-usb-boot-config-guide-for-ssd-flash-drives/)
