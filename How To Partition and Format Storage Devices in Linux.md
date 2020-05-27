@@ -6,7 +6,6 @@
 
 - By [Justin Ellingwood](https://www.digitalocean.com/community/users/jellingwood)
 
-
 ### Introduction
 
 Preparing a new disk for use on a Linux system can be quick and easy. There are many tools, filesystem formats, and partitioning schemes that may complicate the process if you have specialized needs, but if you want to get up and running quickly, it’s fairly straightforward.
@@ -169,8 +168,8 @@ The [Filesystem Hierarchy Standard](http://refspecs.linuxfoundation.org/fhs.shtm
 
 Create the directory by typing:
 
-```
-
+```bash
+sudo mkdir -p /mnt/data
 ```
 
 ### Mounting the Filesystem Temporarily
