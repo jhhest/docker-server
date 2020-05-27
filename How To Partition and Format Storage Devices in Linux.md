@@ -176,8 +176,8 @@ sudo mkdir -p /mnt/data
 
 You can mount the filesystem temporarily by typing:
 
-```
-
+```bash
+sudo mount -o defaults /dev/sda1 /mnt/data
 ```
 
 ### Mounting the Filesystem Automatically at Boot
@@ -185,7 +185,7 @@ You can mount the filesystem temporarily by typing:
 If you wish to mount the filesystem automatically each time the server boots, adjust the `/etc/fstab` file:
 
 ```
-
+sudo nano /etc/fstab
 ```
 
 Earlier, we issued a `sudo lsblk --fs` command to display three filesystem identifiers for our filesystem. We can use any of these in this file. We’ve used the partition _label_ below, but you can see what the lines would look like using the other two identifiers in the commented out lines:
