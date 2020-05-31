@@ -36,13 +36,19 @@ You can use the following command to login into your raspberry pi through ssh wi
 ```bash
 ssh ubuntu@192.1.1.11
 ```
+### Install log2ram
 
+Follow the installation instructions on [log2ram github page](https://github.com/azlux/log2ram)
+
+Edit the log2ram configuration file to use more ram. (at least 100MB)
 ### Add an external USB harddisk.
 
 To add an external usb drive u need to partition it and mount it.
 the necessary steps are described in the following article.
 
 - [How To Partition and Format Storage Devices in Linux](https://github.com/jhhest/docker-server/blob/master/How%20To%20Partition%20and%20Format%20Storage%20Devices%20in%20Linux.md)
+
+### 
 
 ### install and configure samba file sharing.
 
