@@ -11,6 +11,7 @@
 
 > I believe docker is a usefull skill and tool in any development environment. I document my steps to learn how to work with docker, docker-compose and ubuntu.
 
+
 ## installation
 
 ### Install ubuntu
@@ -229,7 +230,13 @@ Find out your `USERDIR` by executing `cd ~ ; pwd` in your terminal.
 
 ## Docker compose
 
-> There are several way's of setting up containers with docker. Docker compose is one way of setting up containers.
+> There are several way's of setting up containers with docker. Docker compose is one way of setting up containers. You can view my docker-compose file as an example. 
+
+The volumes you map from a container to a folder outside of the container must have the right user rights. 
+
+In example for node red to work to folder must have read and write permissions from the normal user. 
+
+sudo chown -R 1000:1000 path/to/your/node-red/data
 
 ### todo
 - https://www.raspberrypi.org/forums/viewtopic.php?t=237735
