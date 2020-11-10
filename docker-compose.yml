@@ -1,30 +1,5 @@
-version: "3.6"
+version: "2.1"
 services:
-  pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "80:80/tcp"
-      - "443:443/tcp"
-    environment:
-      TZ: "Europe/Amsterdam"
-      ServerIP: 192.168.1.14
-      WEBPASSWORD: "Zilerabu92!"
-    # Volumes store your data between container upgrades
-    volumes:
-      - '${DOCKERDIR}/pihole/etc-pihole/:/etc/pihole/'
-      - '${DOCKERDIR}/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    dns:
-      - 127.0.0.1
-      - 1.1.1.1
-    # Recommended but not required (DHCP needs NET_ADMIN)
-    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-    cap_add:
-      - NET_ADMIN
-    restart: unless-stopped
   portainer:
     image: portainer/portainer
     container_name: portainer
@@ -35,6 +10,103 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${DOCKERDIR}/portainer/data:/data
-      - ${DOCKERDIR}/shared:/shared
+      - ${DOCKERDIR}/portainer/shared:/shared
     environment:
       - TZ=${TZ}
+  transmission:
+    image: linuxserver/transmission:arm32v7-latest
+    container_name: transmission
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - USER=admin #optional
+      - PASS=Zilerabu92!
+    volumes:
+      - ${DOCKERDIR}/transmission/config:/config
+      - ${TORRENTDIR}/:/downloads
+      - ${TORRENTDIR}/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "81:80/tcp"
+      - "444:443/tcp"
+    environment:
+      TZ: ${TZ}
+      WEBPASSWORD: 'Zilerabu92!'
+    volumes:
+      - ${DOCKERDIR}/pihole/etc-pihole/:/etc/pihole/
+      - ${DOCKERDIR}/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
+    dns:
+      - 127.0.0.1
+      - 192.168.1.1
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+  syncthing:
+    image: linuxserver/syncthing
+    container_name: syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - UMASK_SET=022
+    volumes:
+      - ${DOCKERDIR}/syncthing/config:/config
+      - ${DOCKERDIR}/syncthing/data1:/data1
+      - ${DOCKERDIR}/syncthing/data2:/data2
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    restart: unless-stopped
+  heimdall:
+    image: linuxserver/heimdall:arm32v7-latest
+    container_name: heimdall
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${DOCKERDIR}/heimdal/config:/config
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
+  domoticz:
+    image: linuxserver/domoticz:arm32v7-stable
+    container_name: domoticz
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${DOCKERDIR}/domoticz/config:/config
+    ports:
+      - 8080:8080
+      - 6144:6144
+      - 1443:1443
+    privileged: true
+    restart: unless-stopped
+  node-red:
+    image: nodered/node-red
+    container_name: node-red
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${DOCKERDIR}/node-red/data:/data
+    ports:
+      - 1880:1880
