@@ -42,7 +42,7 @@ services:
       - "444:443/tcp"
     environment:
       TZ: ${TZ}
-      WEBPASSWORD: 'Zilerabu92!'
+      WEBPASSWORD: ${DOCKERPASSWORD}
     volumes:
       - ${DOCKERDIR}/pihole/etc-pihole/:/etc/pihole/
       - ${DOCKERDIR}/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
